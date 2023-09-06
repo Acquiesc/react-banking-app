@@ -1,0 +1,83 @@
+/*Hero*/
+.hero-header {
+    color: #FEC824;
+    text-shadow: rgba(0, 0, 0, .3) 4px 2px 1px;
+}
+
+.hero  {
+    background: linear-gradient(90deg, rgba(27,70,149,1) 0%, rgba(8,169,102,1) 100%);
+    overflow: hidden;
+    min-height: 50vh;
+}
+
+.hero .row {
+    min-height: 50vh;
+}
+
+@media(min-width: 1024px) {
+    .hero {
+        height: 50%;
+    }
+}
+
+/*App Store*/
+.app-store-container {
+    border-top-right-radius: 50px;
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+    background-color: #f1f1f1;
+}
+
+/*Site Search*/
+.site-search-container {
+    background-color: #1B4695;
+}
+
+/*Sustainability Report*/
+.sustainability-report-container {
+    background-color: #f1f1f1;
+}
+
+.btn-blue-square {
+    background-color: #1B4695;
+    color: #fff;
+}
+
+/*Notices & Disclosure*/
+.notices-dropdown-container {
+    background-color: #f1f1f1;
+    transition: all .3s ease;
+    font-size: 1rem;
+}
+
+.notices-dropdown-container * {
+    font-size: inherit;
+}
+
+.notices-dropdown-content {
+    max-height: 0px;
+    opacity: 0;
+    overflow: hidden;
+    transition: all .3s ease;
+}
+
+.open {
+    max-height: 1500px !important;
+    opacity: 1;
+}
+
+/*Contact Panel*/
+.contact-panel-container {
+    background-color: #f1f1f1;
+}
+
+.contact-panel {
+    background-color: #fff;
+    border: 2px solid #c4c4c4;
+}
+
+@media(max-width: 1024px) {
+    .no-border-top-small {
+        border-top: 0px;
+    }
+}

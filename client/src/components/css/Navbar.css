@@ -1,0 +1,47 @@
+/*Navbar*/
+.nav {
+    background-color: rgb(28,39,88);
+    color: black;
+    height: 75px;
+    color: white;
+}
+
+a {
+    text-decoration: none !important;
+}
+
+a:hover {
+    cursor: pointer;
+}
+
+.nav-icon, .nav-link {
+    color: white;
+}
+
+.outline-btn {
+    background-color: transparent;
+    border: 1px solid white;
+    border-radius: 10px;
+    width: fit-content;
+    height: fit-content;
+}
+
+@media(min-width: 1024px) {
+    .nav {
+        background-color:  #fff !important;
+        height: 100px !important;
+    }
+
+    .nav-link {
+        color: black !important;
+    }
+
+    .outline-btn {
+        border-color: black;
+    }
+
+    .nav-icon {
+        border-color: black;
+        color: black;
+    }
+}

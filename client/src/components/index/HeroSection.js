@@ -1,8 +1,13 @@
 import React from 'react'
+import { useSelector } from 'react-redux'
 
 import ATM from '../../assets/imgs/fifth-third-atm.png'
 
 export default function HeroSection() {
+  const users = useSelector((state) => state.users)
+
+  console.log(users)
+
   return (
     <section className="hero container-fluid px-3">
         <div className="row h-100 justify-content-center">

@@ -1,0 +1,6 @@
+/*Profile Page*/
+.profile-content-container {
+    min-height: 100vh;
+    width: 100vw;
+    background-color: #f1f1f1;
+}

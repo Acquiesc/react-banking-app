@@ -20,7 +20,7 @@ export default function Footer() {
             </div>
         </div>
         <div className='row d-flex mt-2'>
-            <p className='fw-bold fs-4 text-dark'>Connect With Us: <i class="bi bi-facebook"></i> <i class="bi bi-twitter"></i> <i class="bi bi-instagram"></i> <i class="bi bi-linkedin"></i></p>
+            <p className='fw-bold fs-4 text-dark'>Connect With Us: <i className="bi bi-facebook"></i> <i className="bi bi-twitter"></i> <i className="bi bi-instagram"></i> <i className="bi bi-linkedin"></i></p>
         </div>
         <div className='row d-flex mt-3'>
             <div className='col-12 text-center'>

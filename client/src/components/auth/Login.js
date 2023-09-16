@@ -2,8 +2,13 @@ import React, { useState } from 'react'
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
 
-export default function LoginForm({ user, setUser }) {
+export default function Login({ setIsLoggedIn }) {
     const [formData, setFormData] = useState({
+        email: '',
+        password: ''
+    })
+
+    const [formErrors, setFormErrors] = useState({
         email: '',
         password: ''
     })
@@ -21,20 +26,24 @@ export default function LoginForm({ user, setUser }) {
     const handleSubmit = async (e) => {
         e.preventDefault();
 
-        try {
-            const response = await axios.post('/api/user/find', formData)
-
-            console.log('found user: ', response.data)
-
-            setUser(response.data)
-
-            navigate('/')
-        } catch (error) {
-
-            setUser(null)
-
-            console.log('Error encountered while finding user: ' + error.response.data)
+        if(formData.email.length < 1) {
+            setFormErrors({ email: 'You must input a valid email address'})
+            return
+        } else if (formData.email.indexOf('@') == -1) {
+            setFormErrors({ email: 'The syntax of this email is not valid'})
+            return
         }
+        if(formData.password.length < 1) {
+            setFormErrors({ password: 'You must submit a password'})
+            return
+        }
+
+        //TODO: udpate to API request
+        //setUser(formData)
+
+        setIsLoggedIn(true)
+
+        navigate('/profile')
     }
 
     return (
@@ -46,14 +55,17 @@ export default function LoginForm({ user, setUser }) {
                     <div className="mb-3">
                         <label htmlFor="email" className="form-label">Email address</label>
                         <input type="email" className="form-control" name='email' id="email" aria-describedby="emailHelp" onChange={handleInputChange}></input>
+                        <p className='text-danger'>{formErrors.email}</p>
                     </div>
                     <div className="mb-3">
                         <label htmlFor="password" className="form-label">Password</label>
                         <input type="password" name="password" className="form-control" id="password" onChange={handleInputChange}></input>
+                        <p className='text-danger'>{formErrors.password}</p>
                     </div>
                     <button type="submit" className="btn btn-primary">Submit</button>
                 </form>
-                <p>Don't have an account?  <a href="/register">Register here</a></p>
+                <p>Don't have an account? (temporarily disabled)  <a href="#">Register here</a></p>
+                <p className='fw-bold'>Currently, any login will succeed for testing</p>
             </div>
         </div>
     </section>

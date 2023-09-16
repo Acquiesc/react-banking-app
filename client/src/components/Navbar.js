@@ -3,19 +3,9 @@ import { useNavigate } from 'react-router-dom'
 
 import fifthThirdLogo from '../assets/imgs/fifth-third-logo-shield.svg'
 
-export default function Navbar({ user, setUser }) {
+export default function Navbar({ isLoggedIn }) {
 
     const navigator = useNavigate()
-
-    function logoutUser(e) {
-        e.preventDefault()
-
-        setUser(null)
-
-        localStorage.removeItem('users.reactbankapp')
-
-        navigator('/')
-    }
 
   return (
        <nav className="nav container-fluid d-flex flex-column border-bottom">
@@ -38,14 +28,7 @@ export default function Navbar({ user, setUser }) {
                     </ul>
                 </div>
                 <div className="col d-none d-lg-flex flex-column text-end justify-content-center">
-                    {user ? (
-                        <div className="d-flex justify-content-end gap-3 w-auto">
-                            <a href="/profile" className="fs-4 nav-link">Profile</a> 
-                            <a href="/" onClick={logoutUser} className="fs-4 nav-link">Logout</a> 
-                        </div>
-                        ) : (
-                            <a href="/login" className="fs-4 nav-link">Login</a> 
-                    )}
+                    <a href="/login" className="fs-4 nav-link">Login</a> 
                 </div>
             </div>
        </nav>
